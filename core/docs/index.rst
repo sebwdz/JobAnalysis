@@ -1,9 +1,9 @@
-.. core documentation master file, created by
+.. JobTrendsCore documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-core documentation!
+JobTrendsCore documentation!
 ==============================================
 
 Contents:

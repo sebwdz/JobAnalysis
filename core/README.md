@@ -1,4 +1,4 @@
-core
+JobTrendsCore
 ==============================
 
 A short description of the project.
