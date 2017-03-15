@@ -8,4 +8,5 @@ def read_cesatem():
     d2 = data_frame.tail(1)
     data = pd.concat([d1, d2])
     data = data.dropna(axis=1, how='any')
+    pd.
     return data
