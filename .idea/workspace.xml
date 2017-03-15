@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="48f8a695-4dae-41ec-9a48-9549bd16906e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/notebooks/cesatem_descriptive_analysis.ipynb" afterPath="$PROJECT_DIR$/core/notebooks/cesatem_descriptive_analysis.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/core/src/features/build_features.py" afterPath="$PROJECT_DIR$/core/src/features/build_features.py" />
     </list>
     <ignored path="JobTrendsCore.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,8 +34,8 @@
       <file leaf-file-name="build_features.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/features/build_features.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+            <state relative-caret-position="144">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -757,8 +756,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/features/build_features.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="34" selection-start-line="5" selection-start-column="34" selection-end-line="5" selection-end-column="34" />
+        <state relative-caret-position="144">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding />
         </state>
       </provider>
