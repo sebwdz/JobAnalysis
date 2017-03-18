@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="48f8a695-4dae-41ec-9a48-9549bd16906e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/CESATEM_descriptive_analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/CESATEM_descriptive_analysis.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/ESA-CESATEM descriptive analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/ESA-CESATEM descriptive analysis.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visualization/simple.py" afterPath="$PROJECT_DIR$/src/visualization/simple.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/ESA descriptive analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/ESA descriptive analysis.ipynb" />
     </list>
     <ignored path="JobTrendsCore.iws" />
     <ignored path=".idea/workspace.xml" />
