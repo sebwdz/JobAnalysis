@@ -3,8 +3,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-def temporal(df, columns):
-    df.plot.line(x="Date", y=columns)
+def temporal(df, columns=None):
+    if columns is not None:
+        df.plot.line(x="Date", y=columns)
+    else:
+        df.plot.line(x="Date")
+    plt.show()
+
+
+def bar(df):
+    df.plot.bar()
     plt.show()
 
 

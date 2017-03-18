@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="48f8a695-4dae-41ec-9a48-9549bd16906e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/CESATEM_descriptive_analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/CESATEM_descriptive_analysis.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/notebooks/ESA-CESATEM descriptive analysis.ipynb" afterPath="$PROJECT_DIR$/notebooks/ESA-CESATEM descriptive analysis.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/data/tools.py" afterPath="$PROJECT_DIR$/src/data/tools.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/features/normalizer.py" afterPath="$PROJECT_DIR$/src/features/normalizer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/visualization/simple.py" afterPath="$PROJECT_DIR$/src/visualization/simple.py" />
     </list>
     <ignored path="JobTrendsCore.iws" />
@@ -82,7 +80,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1489874063358" expanded="true" signature="39:157" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +90,8 @@
       <file leaf-file-name="simple.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/visualization/simple.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="468">
-              <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+            <state relative-caret-position="306">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
               <folding>
                 <element signature="e#1#32#0" expanded="true" />
               </folding>
@@ -674,14 +674,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1489874063358" expanded="true" signature="39:157" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/visualization/simple.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="28" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
+        <state relative-caret-position="306">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#1#32#0" expanded="true" />
           </folding>
