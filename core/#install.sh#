@@ -1,5 +1,0 @@
-export WORKON_HOME=$HOME/Project/JobTrendsCore/core
-export PROJECT_HOME=$HOME/Project/JobTrendsCore/core
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.5
-export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
