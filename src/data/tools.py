@@ -17,7 +17,7 @@ def to_glossary(data_frame, columns):
 
 
 def columns_without(df, without):
-    columns = df.columns.values
+    columns = df.columns.values.copy()
     for x in without:
         columns = np.delete(columns, np.where(columns == x))
     return columns
