@@ -15,3 +15,31 @@ def temporal_merge(df, period):
             it += 3
         new_data[x] = data
     return new_data
+
+
+def merge_all(df):
+    res = {"features": []}
+    for x in df.columns.values:
+        for y in range(len(df[x])):
+            if y >= len(res["features"]):
+                res["features"].append(df[x][y])
+            else:
+                res["features"][y] = res["features"][y] + df[x][y]
+    return pd.DataFrame(res)
+
+
+def columns_as_rows(df):
+    res = {"features": []}
+    for x in df.columns.values:
+        for y in range(len(df[x])):
+            res["features"].append(df[x][y])
+    return pd.DataFrame(res)
+
+
+def to_1d(df):
+    res = {}
+    for x in df.columns.values:
+        res[x] = []
+        for y in range(len(df[x])):
+            res[x].append(df[x][y][0])
+    return pd.DataFrame(res)

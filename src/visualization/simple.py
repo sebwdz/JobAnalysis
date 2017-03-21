@@ -35,3 +35,10 @@ def heat_map(df, x, y, size):
     plt.figure(figsize=size)
     sns.heatmap(df, xticklabels=x, yticklabels=y)
     plt.show()
+
+
+def despine(wd_data, size):
+    plt.figure(figsize=size)
+    sns.boxplot(data=wd_data, palette="PRGn")
+    sns.despine(offset=10, trim=True)
+    plt.show()
