@@ -3,15 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
+import sklearn.linear_model
+
 import data.esa
-import data.tools
 import features.tools
 import features.supervised
-import models.objects.NewRecursive
-import visualization.simple
+import keras
 
 
-outputs = ["ESA_BG"]
 esa, columns = data.esa.data_set()
 
 ####
@@ -21,66 +20,58 @@ esa = esa.drop("Date", axis=1)
 
 s_data = (esa / esa.sum())
 s_data = s_data.transpose()
-s_data = (s_data - s_data.min()) / (s_data.max() - s_data.min()) * 10
+s_data = (s_data - s_data.min()) / (s_data.max() - s_data.min())
 s_data = s_data.transpose()
 
+display = s_data.copy()
 
-input_data, output_data = features.supervised.to_time(s_data, 12, 4)
+input_data, output_data = features.supervised.to_time(s_data, 12, 6, 6)
+_, display = features.supervised.to_time(display, 12, 6, 1)
 
-# models
-
-m = models.objects.NewRecursive.Model()
-
-inputs_shape = []
-for x in columns:
-    inputs_shape.append((x, (None, len(input_data[x][0]))))
-
-outputs_shape = []
-for x in outputs:
-    outputs_shape.append((x + "_out", (None, 1)))
-
-m.build(inputs_shape=inputs_shape, outputs_shape=outputs_shape, learning_rate=0.0001)
+input_f = features.tools.merge_all(input_data)
+input_data2 = np.array(list(input_f["features"]))
 
 
-# create session
+def baseline_model():
+    model = keras.models.Sequential()
+    model.add(keras.layers.Dense(300, input_dim=444, kernel_initializer='normal', activation='relu'))
+    model.add(keras.layers.Dense(200, input_dim=300, kernel_initializer='normal', activation='relu'))
+    model.add(keras.layers.Dense(6, kernel_initializer='normal'))
+    model.compile(loss='mean_squared_error', optimizer='adam')
+    return model
 
-session = models.objects.NewRecursive.Session(m, "./esa.ckpt")
-session.save()
+result = dict()
 
-plt.ion()
-plt.show()
+for k in output_data.columns.values:
+    output_data2 = np.array(list(output_data[k]))
 
-xx = {}
-yy = {}
-for x in input_data.columns:
-    xx[x] = (np.array(list(input_data[x])))
-for x in outputs:
-    yy[x + "_out"] = np.array(list(output_data[x]))
+    x_train = input_data2[:40]
+    y_train = output_data2[:40]
 
-train = {**xx, **yy}
-for k in train:
-    train[k] = train[k][:40]
+    xx_train = x_train
+    yy_train = y_train
 
+    model = baseline_model()
+    model.fit(xx_train, yy_train, batch_size=20, epochs=400, verbose=0)
+    y = model.predict(input_data2, batch_size=128)
 
-print("running...")
-for it in range(10000):
-    session.fit(train, it)
-    if it % 400 == 0:
-        y = session.predict(xx)
-        plt.clf()
-        plt.plot(features.tools.to_1d(output_data)[outputs[0]])
-        plt.plot(y[outputs[0] + "_out"])
-        plt.draw()
-        plt.pause(0.001)
-        print(y[outputs[0] + "_out"])
-        print(session.evaluate(train, it))
-        session.save()
+    last_xx = np.array(list(s_data.tail(40)[k]))
+    last_y = y[-1]
 
-print("finish")
-session.save()
-y = session.predict(xx)
-plt.clf()
-plt.plot(features.tools.to_1d(output_data)[outputs[0]])
-plt.plot(y[outputs[0] + "_out"])
-plt.show()
-input()
+    x = [xx for xx in range(0, 40)]
+    y = [None for xx in range(0, 40 - 6)] + list(last_y)
+
+    r = sklearn.linear_model.LinearRegression()
+    r.fit([[0], [1], [2], [3], [4], [5]], last_y)
+    ry = r.predict([[0], [1], [2], [3], [4], [5]])
+
+    result[k] = r.coef_
+
+    ry = [None for xx in range(0, 40 - 6)] + list(ry)
+
+    plt.plot(last_xx)
+    plt.plot(ry)
+    #plt.scatter(x, y)
+    plt.show()
+
+pd.DataFrame(result).to_csv("../data/interim/scores_cesatem.csv")

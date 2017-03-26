@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def to_time(df, fr, to):
+def to_time(df, fr, to, l=1):
     rff = {}
     rtf = {}
     for x in df:
@@ -11,6 +11,9 @@ def to_time(df, fr, to):
                 rff[x] = []
                 rtf[x] = []
             rff[x].append(list(df[x][i:i + fr]))
-            rtf[x].append([df[x][fr + to + i]])
+            if l != 1:
+                rtf[x].append(df[x][fr + to + i - l:fr + to + i])
+            else:
+                rtf[x].append([df[x][fr + to + i]])
             i += 1
     return pd.DataFrame(rff), pd.DataFrame(rtf)
